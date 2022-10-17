@@ -2,7 +2,7 @@
 
 Welcome to NS6.js, a BP debate room allocation software developed for the Harrow Debating Society, but with ambitions of being used beyond.
 
-Check out our NS6.js demo at [NS6-JS.glitch.me](https://ns6.glitch.me/) (source code in [`index.html`](./index.html)).
+Check out our NS6.js demo at [NS6-JS.glitch.me](https://ns6-js.glitch.me/) (source code in [`index.html`](./index.html)).
 
 More docs will be added in the future as the project develops.
 
