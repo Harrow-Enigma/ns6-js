@@ -18,8 +18,8 @@ const GROUPSTOREKEY = "ns6-groups";
 const PICKORDER = {
     OG: {1: 0, 2: 4},
     OO: {1: 1, 2: 5},
-    CO: {1: 2, 2: 6},
-    CG: {1: 3, 2: 7},
+    CG: {1: 2, 2: 6},
+    CO: {1: 3, 2: 7},
 };
 
 function executeDraw(drawId, speakersId, roomsId, adjudicatorsId, teamSize=8) {
@@ -70,6 +70,16 @@ function injectGroups(parentId, groups) {
     document.getElementById(parentId).appendChild(container);
 }
 
+function speakerTextarea(name) {
+    var speaker = document.createElement('textarea');
+    speaker.type = "text";
+    speaker.className = "form-control";
+    speaker.placeholder = "Speaker";
+    speaker.style = "text-align: center; overflow: hidden; resize: none; background: none; border: none; font-weight: bold; padding: 0; margin: 0;";
+    speaker.value = name;
+    return speaker;
+}
+
 function injectRoom(parent, name, adjudicator, speakers) {
     
     var maindiv = document.createElement('div');
@@ -110,9 +120,9 @@ function injectRoom(parent, name, adjudicator, speakers) {
                 role.className = "text-success";
 
                 var speaker1 = document.createElement('th');
-                speaker1.innerHTML = speakers[PICKORDER[k][1]];
+                speaker1.appendChild(speakerTextarea(speakers[PICKORDER[k][1]]));
                 var speaker2 = document.createElement('th');
-                speaker2.innerHTML = speakers[PICKORDER[k][2]];
+                speaker2.appendChild(speakerTextarea(speakers[PICKORDER[k][2]]));
 
                 tr.appendChild(role);
                 tr.appendChild(speaker1);
